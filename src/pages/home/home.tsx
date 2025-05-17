@@ -1,5 +1,5 @@
 import MainWrapper from '../main'
-import { Button, Card, Flex, Image, Pagination, Spin, Typography } from 'antd'
+import { Button, Card, Flex, Image, InputNumber, Pagination, Spin, Typography } from 'antd'
 import { GLOBAL_STYLES } from '../../utils/global-styles'
 import useProducts from '../../hooks/use-products/use-products'
 
@@ -16,10 +16,10 @@ export default function Home() {
 
   return (
     <MainWrapper title={'Products'}>
-      <Flex vertical gap={'20px'} align='center'>
+      <Flex vertical gap={'20px'}>
         {productsResponse.isLoading && <Spin size='large' />}
         <Flex gap={'10px'}>
-          {categoriesResponse.data?.slice(0, 10).map(({ id, name, slug }) => (
+          {categoriesResponse.data?.slice(0, 12).map(({ id, name, slug }) => (
             <Button
               color={filters['categorySlug'] === slug ? 'danger' : 'cyan'}
               variant='solid'
@@ -32,15 +32,31 @@ export default function Home() {
             </Button>
           ))}
         </Flex>
-        <Pagination
-          total={totalNumberOfProducts}
-          showLessItems
-          showSizeChanger
-          showQuickJumper
-          onChange={(page, limit) => updateFilters({ page, limit })}
-        />
+        <Flex align='center' justify='space-between' gap='30px'>
+          <Flex gap={'10px'}>
+            <InputNumber
+              placeholder='min price'
+              value={filters['price_min']}
+              min={1}
+              onChange={(price_min) => updateFilters({ price_min })}
+            />
+            <InputNumber
+              placeholder='max price'
+              value={filters['price_max']}
+              min={0}
+              onChange={(price_max) => updateFilters({ price_max })}
+            />
+          </Flex>
+          <Pagination
+            total={totalNumberOfProducts}
+            showLessItems
+            showSizeChanger
+            onChange={(page, limit) => updateFilters({ page, limit })}
+          />
+          <Button onClick={() => updateFilters({ page: 1, limit: 0 }, 'new')}>Reset Filters</Button>
+        </Flex>
 
-        <Flex wrap='wrap' justify='center' gap={'10px'}>
+        <Flex wrap='wrap' justify='space-between' gap={'10px'}>
           {productsResponse.data?.map((product) => (
             <Card style={{ width: '300px' }} hoverable cover={<Image alt='not-found' src={product.images[0]} />}>
               <Flex vertical>

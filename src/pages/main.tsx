@@ -19,26 +19,6 @@ const themeStyle: ThemeConfig = {
     fontFamily: 'Poppins',
     fontSize: 12,
   },
-  components: {
-    Table: {
-      headerBg: GLOBAL_STYLES['table']['primaryColor'],
-      borderColor: GLOBAL_STYLES['table']['primaryColor'],
-    },
-    Button: {
-      defaultHoverBorderColor: GLOBAL_STYLES['primaryColor'],
-      defaultHoverColor: GLOBAL_STYLES['primaryColor'],
-    },
-    Input: {
-      hoverBorderColor: GLOBAL_STYLES['primaryColor'],
-      activeBorderColor: GLOBAL_STYLES['primaryColor'],
-      activeShadow: `0 0 0 0.5px ${GLOBAL_STYLES['primaryColor']}`,
-    },
-    Select: {
-      hoverBorderColor: GLOBAL_STYLES['primaryColor'],
-      activeBorderColor: GLOBAL_STYLES['primaryColor'],
-      activeOutlineColor: GLOBAL_STYLES['primaryColorFaint'],
-    },
-  },
 }
 interface MainWrapperProps {
   children: ReactNode
@@ -73,7 +53,7 @@ export default function MainWrapper({ children, title }: MainWrapperProps) {
           <Content
             style={{
               overflow: 'initial',
-              padding: '16px 16px 0  16px',
+              padding: '16px 50px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',

@@ -9,8 +9,12 @@ export default function useProducts() {
   const [totalNumberOfProducts, setTotalNumberOfProducts] = useState(40)
   const [queryParams, setQueryParams] = useSearchParams()
 
-  function updateFilters(newFilters: Record<string, any>) {
-    setFilters({ ...filters, ...newFilters })
+  function updateFilters(newFilters: Record<string, any>, type = 'update') {
+    if (type === 'new') {
+      setFilters(newFilters)
+    } else {
+      setFilters({ ...filters, ...newFilters })
+    }
   }
 
   const filterQuery =
