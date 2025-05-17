@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 export default function useProducts() {
-  const [filters, setFilters] = useState<Record<string, any>>({ page: 1, limit: 10 })
+  const [filters, setFilters] = useState<Record<string, any>>({ page: 1, limit: 10, price_min: 0, price_max: 1000 })
   const [totalNumberOfProducts, setTotalNumberOfProducts] = useState(40)
   const [queryParams, setQueryParams] = useSearchParams()
 

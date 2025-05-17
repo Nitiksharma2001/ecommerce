@@ -37,7 +37,7 @@ export default function Home() {
             <InputNumber
               placeholder='min price'
               value={filters['price_min']}
-              min={1}
+              min={0}
               onChange={(price_min) => updateFilters({ price_min })}
             />
             <InputNumber
