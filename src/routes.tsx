@@ -3,6 +3,9 @@ import { appRoutes } from './utils/routes-points'
 import { RouterProvider } from 'react-router'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 export default function AppRouter() {
   const router = createBrowserRouter(
@@ -13,7 +16,9 @@ export default function AppRouter() {
 
   return (
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </Provider>
   )
 }
