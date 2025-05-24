@@ -1,5 +1,7 @@
 import { useState } from 'react'
+
 import { Button, Flex, InputNumber, Pagination, Select, Space, Table, Typography } from 'antd'
+
 import { GLOBAL_STYLES } from '../../utils/global-styles'
 import { DataSourceType, TableJSXProps } from './table-type'
 
@@ -10,7 +12,7 @@ export default function TableJSX({
   filters,
   updateFilters,
   isPagination = false,
-  isLoading = false,
+  isLoading = false
 }: TableJSXProps) {
   const [goToPage, setGoToPage] = useState(1)
   const { columns, dataSource, total } = data
@@ -29,7 +31,7 @@ export default function TableJSX({
         onChange={(_, cascadingFilters) => updateFilters(cascadingFilters)}
         style={{
           border: `1px solid ${GLOBAL_STYLES['table']['primaryColor']}`,
-          borderRadius: GLOBAL_STYLES['primaryRadius'],
+          borderRadius: GLOBAL_STYLES['primaryRadius']
         }}
       />
 
@@ -48,7 +50,7 @@ export default function TableJSX({
                 options={[
                   { value: 10, label: '10 / Page' },
                   { value: 20, label: '20 / Page' },
-                  { value: 50, label: '50 / Page' },
+                  { value: 50, label: '50 / Page' }
                 ]}
               />
             </Flex>

@@ -1,15 +1,14 @@
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
+import { Avatar, Button, Flex, Popconfirm, Tag, Typography } from 'antd'
 import { Link } from 'react-router-dom'
 
-import { Avatar, Button, Flex, Popconfirm, Tag, Typography } from 'antd'
-
-import { PromiseColumnType, PromiseColumnfiltersType } from '../../apis/table/table'
-import { ColumnType } from './table-type'
-import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
 import { deleteUser } from '../../apis/admin/admin'
-import { openDrawer } from '../../redux/drawer-slice/drawer-slice'
+import { PromiseColumnType, PromiseColumnfiltersType } from '../../apis/table/table'
 import { AddUpdateUser } from '../../pages/user-management/update-add-user'
-import { AppDispatch } from '../../redux/store'
+import { openDrawer } from '../../redux/drawer-slice/drawer-slice'
 import { useAppDispatch } from '../../redux/hooks'
+import { AppDispatch } from '../../redux/store'
+import { ColumnType } from './table-type'
 
 const { Text } = Typography
 
@@ -23,7 +22,7 @@ const filterOnColumns = [
   'sourceWarehouseOrSupplier',
   'location',
   'supplierSite',
-  'sourceWarehouseOrSupplierSite',
+  'sourceWarehouseOrSupplierSite'
 ]
 
 export function updateColumns(columns: PromiseColumnType[], columnfilters?: PromiseColumnfiltersType[]): ColumnType {
@@ -45,7 +44,7 @@ export function updateColumns(columns: PromiseColumnType[], columnfilters?: Prom
             <Tag style={{ textTransform: 'capitalize', color: 'black' }} color={key === 'DONE' ? '#FCF2CF' : '#ACECBE'}>
               {title}
             </Tag>
-          ),
+          )
         }
       }
 
@@ -65,7 +64,7 @@ export function updateColumns(columns: PromiseColumnType[], columnfilters?: Prom
                 view details
               </Link>
             )
-          },
+          }
         }
       }
 
@@ -77,7 +76,7 @@ export function updateColumns(columns: PromiseColumnType[], columnfilters?: Prom
               <Avatar src={avatar} size={30}></Avatar>
               <Text style={{ textWrap: 'nowrap', fontSize: '12px' }}>{name}</Text>
             </Flex>
-          ),
+          )
         }
       }
 
@@ -94,13 +93,13 @@ export function updateColumns(columns: PromiseColumnType[], columnfilters?: Prom
                   openDrawer({
                     details: {
                       title: 'Updata the User',
-                      content: <AddUpdateUser type='update' userDetails={record} />,
-                    },
+                      content: <AddUpdateUser type='update' userDetails={record} />
+                    }
                   })
                 )
               }}
             ></Button>
-          ),
+          )
         }
       }
       if (col.key === 'delete') {
@@ -119,7 +118,7 @@ export function updateColumns(columns: PromiseColumnType[], columnfilters?: Prom
             >
               <Button color='danger' variant='text' icon={<DeleteOutlined />}></Button>
             </Popconfirm>
-          ),
+          )
         }
       }
 
@@ -129,9 +128,9 @@ export function updateColumns(columns: PromiseColumnType[], columnfilters?: Prom
           filterOnColumns.includes(filterColumn['key']) && {
             filters: filterColumn['options'].map((value) => {
               return { text: value, value }
-            }),
+            })
           }),
-        render: (text: string) => <Text style={{ textWrap: 'nowrap', fontSize: '12px' }}>{text}</Text>,
+        render: (text: string) => <Text style={{ textWrap: 'nowrap', fontSize: '12px' }}>{text}</Text>
       }
     })
 }

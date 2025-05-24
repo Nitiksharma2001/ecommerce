@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 export interface DrawerState {
   isDrawerOpen: boolean
@@ -9,7 +9,7 @@ export interface DrawerState {
 }
 
 const initialState: DrawerState = {
-  isDrawerOpen: false,
+  isDrawerOpen: false
 }
 
 export const drawerSlice = createSlice({
@@ -23,8 +23,8 @@ export const drawerSlice = createSlice({
     },
     closeDrawer: (state) => {
       state.isDrawerOpen = false
-    },
-  },
+    }
+  }
 })
 
 export const { openDrawer, closeDrawer } = drawerSlice.actions

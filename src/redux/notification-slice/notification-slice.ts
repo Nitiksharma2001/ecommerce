@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+
 type NotificationType = 'success' | 'info' | 'warning' | 'error'
 
 interface NotificationState {
@@ -11,7 +12,7 @@ interface NotificationState {
 }
 
 const initialState: NotificationState = {
-  isNotificationOpen: false,
+  isNotificationOpen: false
 }
 
 export const notificationSlice = createSlice({
@@ -26,8 +27,8 @@ export const notificationSlice = createSlice({
     closeNotification: (state) => {
       state.isNotificationOpen = false
       state.notificationDetails = undefined
-    },
-  },
+    }
+  }
 })
 
 export const { showNotification, closeNotification } = notificationSlice.actions

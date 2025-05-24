@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 
 import { Button, Flex, Layout, Popover } from 'antd'
-
-import { appRoutes, RoutingType, sidebarIconsKeys } from '../../utils/routes-points'
-import IconOverlay from '../UI/icons/icons-overlay'
 import { IconType } from 'react-icons'
+import { Link, useLocation } from 'react-router-dom'
+
+import { RoutingType, appRoutes, sidebarIconsKeys } from '../../utils/routes-points'
+import IconOverlay from '../UI/icons/icons-overlay'
 
 const { Sider } = Layout
 
@@ -18,7 +18,7 @@ const siderStyle: React.CSSProperties = {
   scrollbarWidth: 'thin',
   scrollbarGutter: 'stable',
   backgroundColor: '#F8F9FA',
-  zIndex: 10,
+  zIndex: 10
 }
 
 export default function SidebarJSX() {
@@ -31,7 +31,7 @@ export default function SidebarJSX() {
         gap='10px'
         style={{
           height: '100%',
-          padding: '24px 0 24px 0',
+          padding: '24px 0 24px 0'
         }}
       >
         <RouteHoveredIcon
@@ -48,7 +48,7 @@ export default function SidebarJSX() {
             padding: '2px',
             backgroundColor: '#F8F9FA',
             borderRadius: '16px',
-            boxShadow: '0px 2px 16px 0px rgba(0, 0, 0, 0.1)',
+            boxShadow: '0px 2px 16px 0px rgba(0, 0, 0, 0.1)'
           }}
         >
           {appRoutes
@@ -78,7 +78,7 @@ export default function SidebarJSX() {
 function RouteHoveredIcon({
   iconDetails,
   needHover,
-  needRoute,
+  needRoute
 }: {
   iconDetails: RoutingType
   needHover: boolean

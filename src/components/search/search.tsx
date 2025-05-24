@@ -1,6 +1,8 @@
-import { Input } from 'antd'
-import { SearchOutlined } from '@ant-design/icons'
 import React from 'react'
+
+import { SearchOutlined } from '@ant-design/icons'
+import { Input } from 'antd'
+
 import { GLOBAL_STYLES } from '../../utils/global-styles'
 
 interface SearchJSXProps {
@@ -19,7 +21,7 @@ export default function SearchJSX({ placeholder = 'Search', onSearch, style }: S
         ...style,
         color: GLOBAL_STYLES['colors']['grey']['7'],
         fontSize: GLOBAL_STYLES['typogrpahy']['size']['normal'],
-        fontStyle: 'italic',
+        fontStyle: 'italic'
       }}
       allowClear
     />

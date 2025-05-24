@@ -21,7 +21,7 @@ export default function ButtonJSX({ label, onClick, style = {}, icon }: ButtonJS
         height: '32px',
         padding: '8px 16px',
         fontWeight: 500,
-        ...style,
+        ...style
       }}
       icon={icon}
     >

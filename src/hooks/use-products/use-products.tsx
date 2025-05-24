@@ -1,8 +1,10 @@
-import { useQuery } from '@tanstack/react-query'
-import { getProducts } from '../../apis/products/products'
-import { getCategories } from '../../apis/products/categories'
 import { useEffect, useState } from 'react'
+
+import { useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'react-router-dom'
+
+import { getCategories } from '../../apis/products/categories'
+import { getProducts } from '../../apis/products/products'
 
 export default function useProducts() {
   const [filters, setFilters] = useState<Record<string, any>>({ page: 1, limit: 10 })
@@ -18,19 +20,22 @@ export default function useProducts() {
 
   const productsResponse = useQuery({
     queryKey: ['products', filters],
-    queryFn: () => getProducts(filters),
+    queryFn: () => getProducts(filters)
   })
 
   const categoriesResponse = useQuery({
     queryKey: ['categories'],
-    queryFn: getCategories,
+    queryFn: getCategories
   })
 
   useEffect(() => {
-    const queryFilters = Array.from(queryParams.entries()).reduce((acc, [key, value]) => {
-      acc[key] = value
-      return acc
-    }, {} as Record<string, string>)
+    const queryFilters = Array.from(queryParams.entries()).reduce(
+      (acc, [key, value]) => {
+        acc[key] = value
+        return acc
+      },
+      {} as Record<string, string>
+    )
 
     updateFilters(queryFilters)
   }, [])
@@ -44,6 +49,6 @@ export default function useProducts() {
     productsResponse,
     categoriesResponse,
     filters,
-    updateFilters,
+    updateFilters
   }
 }

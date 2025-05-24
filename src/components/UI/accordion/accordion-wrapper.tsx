@@ -1,24 +1,26 @@
-import { Button, Flex, Switch, Tooltip, Typography, Upload, UploadProps } from 'antd'
-import { engineNames } from '../../../utils/constants'
-import TableJSX from '../../table/table'
-import { UploadOutlined, DownloadOutlined } from '@ant-design/icons'
-import AccordionJSX from './accordion'
 import { useState } from 'react'
-import { FilterType } from '../../table/table-type'
-import useParameter from '../../../hooks/table/use-parameter'
-import { updateColumns } from '../../table/helper'
-import { dataToCSV } from '../../../helper/csv-zip'
+
+import { DownloadOutlined, UploadOutlined } from '@ant-design/icons'
+import { Button, Flex, Switch, Tooltip, Typography, Upload, UploadProps } from 'antd'
 import { saveAs } from 'file-saver'
+
 import { uploadData } from '../../../apis/table/upload-data'
+import { dataToCSV } from '../../../helper/csv-zip'
+import useParameter from '../../../hooks/table/use-parameter'
+import { engineNames } from '../../../utils/constants'
 import { GLOBAL_STYLES } from '../../../utils/global-styles'
 import DropdownJSX from '../../dropdown/dropdown'
+import { updateColumns } from '../../table/helper'
+import TableJSX from '../../table/table'
+import { FilterType } from '../../table/table-type'
+import AccordionJSX from './accordion'
 
 const { Title } = Typography
 
 const cardTitleStyle = {
   fontWeight: GLOBAL_STYLES['typogrpahy']['weight']['heavy'],
   fontSize: GLOBAL_STYLES['typogrpahy']['size']['normal'],
-  color: GLOBAL_STYLES['colors']['grey']['7'],
+  color: GLOBAL_STYLES['colors']['grey']['7']
 }
 
 interface AccordionTableProps {
@@ -53,7 +55,7 @@ export default function AccordionTableJSX({ engine, canDownload = true, canUploa
     },
     beforeUpload: (file) => {
       console.log(file)
-    },
+    }
   }
   const accordionItem = [
     {
@@ -65,7 +67,7 @@ export default function AccordionTableJSX({ engine, canDownload = true, canUploa
               <DropdownJSX
                 options={[
                   { label: 'In-Bound', value: 'inbound' },
-                  { label: 'Out-Bound', value: 'outbound' },
+                  { label: 'Out-Bound', value: 'outbound' }
                 ]}
                 defaultValue='inbound'
                 onChange={(value) => console.log(value)}
@@ -104,8 +106,8 @@ export default function AccordionTableJSX({ engine, canDownload = true, canUploa
           filters={filters}
           updateFilters={updateFilters}
         />
-      ),
-    },
+      )
+    }
   ]
 
   return <AccordionJSX items={accordionItem} />

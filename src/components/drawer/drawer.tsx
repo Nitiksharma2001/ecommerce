@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { Drawer } from 'antd'
+
 import { closeDrawer } from '../../redux/drawer-slice/drawer-slice'
 import { useAppDispatch } from '../../redux/hooks'
 import { AppDispatch } from '../../redux/store'

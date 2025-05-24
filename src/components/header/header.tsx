@@ -1,7 +1,9 @@
 import React from 'react'
-import { Button, Layout, Typography, Flex } from 'antd'
-import { AlertIcon } from '../../assets/icons/support-icons'
+
 import { ReloadOutlined } from '@ant-design/icons'
+import { Button, Flex, Layout, Typography } from 'antd'
+
+import { AlertIcon } from '../../assets/icons/support-icons'
 import { GLOBAL_STYLES } from '../../utils/global-styles'
 
 const { Header } = Layout
@@ -10,7 +12,7 @@ const { Text } = Typography
 const titleStyle: React.CSSProperties = {
   fontWeight: '600',
   fontSize: '20px',
-  color: '#59595A',
+  color: '#59595A'
 }
 
 const iconStyle: React.CSSProperties = {
@@ -21,12 +23,12 @@ const iconStyle: React.CSSProperties = {
   width: '16px',
   borderRadius: '15px',
   backgroundColor: 'red',
-  color: 'white',
+  color: 'white'
 }
 const headerNotificationStyle = {
   fontWeight: GLOBAL_STYLES['typogrpahy']['weight']['light'],
   fontSize: GLOBAL_STYLES['typogrpahy']['size']['normal'],
-  color: GLOBAL_STYLES['colors']['grey']['6'],
+  color: GLOBAL_STYLES['colors']['grey']['6']
 }
 
 interface HeaderJSXProps {
@@ -42,7 +44,7 @@ export default function HeaderJSX({ title }: HeaderJSXProps) {
         backgroundColor: 'inherit',
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: 'center'
       }}
     >
       <Text style={titleStyle}>{title}</Text>

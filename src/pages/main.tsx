@@ -1,24 +1,27 @@
+import { type ReactNode, useEffect } from 'react'
+
 import { ConfigProvider, Layout, ThemeConfig } from 'antd'
-import SidebarJSX from '../components/sidebar/sidebar'
+import { useNavigate } from 'react-router-dom'
+
+import DrawerJSX from '../components/drawer/drawer'
 import HeaderJSX from '../components/header/header'
 import ModalJSX from '../components/modal/modal'
-import { closeModal } from '../redux/modal-slice/modal-slice'
-import { useNavigate } from 'react-router-dom'
-import { useEffect, type ReactNode } from 'react'
-import type { RootState } from '../redux/store' // adjust if the store type is elsewhere
-import { useAppDispatch, useAppSelector } from '../redux/hooks'
-import { GLOBAL_STYLES } from '../utils/global-styles'
-import DrawerJSX from '../components/drawer/drawer'
+import SidebarJSX from '../components/sidebar/sidebar'
 import useNotification from '../hooks/notification/notification'
+// adjust if the store type is elsewhere
+import { useAppDispatch, useAppSelector } from '../redux/hooks'
+import { closeModal } from '../redux/modal-slice/modal-slice'
 import { closeNotification } from '../redux/notification-slice/notification-slice'
+import type { RootState } from '../redux/store'
+import { GLOBAL_STYLES } from '../utils/global-styles'
 
 const { Content } = Layout
 
 const themeStyle: ThemeConfig = {
   token: {
     fontFamily: 'Poppins',
-    fontSize: 12,
-  },
+    fontSize: 12
+  }
 }
 interface MainWrapperProps {
   children: ReactNode
@@ -57,7 +60,7 @@ export default function MainWrapper({ children, title }: MainWrapperProps) {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              gap: '10px',
+              gap: '10px'
             }}
           >
             {children}

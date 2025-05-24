@@ -1,14 +1,15 @@
-import MainWrapper from '../main'
 import { Button, Card, Flex, Image, InputNumber, Pagination, Spin, Typography } from 'antd'
-import { GLOBAL_STYLES } from '../../utils/global-styles'
+
 import useProducts from '../../hooks/use-products/use-products'
+import { GLOBAL_STYLES } from '../../utils/global-styles'
+import MainWrapper from '../main'
 
 const { Text } = Typography
 
 const cardTitleStyle = {
   fontWeight: GLOBAL_STYLES['typogrpahy']['weight']['heavy'],
   fontSize: GLOBAL_STYLES['typogrpahy']['size']['title'],
-  color: GLOBAL_STYLES['colors']['grey']['7'],
+  color: GLOBAL_STYLES['colors']['grey']['7']
 }
 
 export default function Home() {

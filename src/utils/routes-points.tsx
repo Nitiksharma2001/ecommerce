@@ -1,12 +1,11 @@
+import { Image } from 'antd'
+import { CgProfile } from 'react-icons/cg'
 import { IoHomeOutline } from 'react-icons/io5'
 
 import mainIcon from '../assets/icons/main-icon.png'
-
 import Home from '../pages/home/home'
 import NotFound from '../pages/not-found'
-import { Image } from 'antd'
 
-import { CgProfile } from 'react-icons/cg'
 export type RoutingType = {
   key: string
   route: string
@@ -22,20 +21,20 @@ export const appRoutes: RoutingType[] = [
     route: '/',
     title: 'Main Icon',
     Icon: () => <Image preview={false} src={mainIcon} />,
-    Component: Home,
+    Component: Home
   },
   {
     key: 'avatar-icon',
     route: '/',
     title: 'Avatar Icon',
-    Icon: CgProfile,
+    Icon: CgProfile
   },
   {
     key: 'not-found',
     route: '*',
     title: 'Page Not Found',
-    Component: NotFound,
-  },
+    Component: NotFound
+  }
 ]
 
 export const sidebarIconsKeys = ['home']

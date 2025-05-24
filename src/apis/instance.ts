@@ -5,7 +5,7 @@ const setAuthToken = (token: string) => localStorage.setItem('accessToken', toke
 
 export function apiClientService(requestConfig: AxiosRequestConfig) {
   const axiosClient: AxiosInstance = axios.create({
-    baseURL: import.meta.env.VITE_BACKEND_ENDPOINT,
+    baseURL: import.meta.env.VITE_BACKEND_ENDPOINT
   })
 
   axiosClient.interceptors.request.use(

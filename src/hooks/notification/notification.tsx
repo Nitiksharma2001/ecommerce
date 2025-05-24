@@ -16,12 +16,12 @@ export default function useNotification() {
       description: notificationDescription,
       placement: 'top',
       duration: 2,
-      pauseOnHover: true,
+      pauseOnHover: true
     })
   }
 
   return {
     contextHolder,
-    openNotification,
+    openNotification
   }
 }

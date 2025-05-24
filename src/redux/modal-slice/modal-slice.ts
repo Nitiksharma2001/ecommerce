@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 interface ModalState {
   isOpen: boolean
@@ -9,7 +9,7 @@ interface ModalState {
 const initialState: ModalState = {
   isOpen: false,
   modalTitle: '',
-  redirectRoute: '/',
+  redirectRoute: '/'
 }
 
 export const modalSlice = createSlice({
@@ -26,8 +26,8 @@ export const modalSlice = createSlice({
       state.isOpen = false
       state.modalTitle = ''
       state.redirectRoute = '/'
-    },
-  },
+    }
+  }
 })
 
 export const { showModal, closeModal } = modalSlice.actions

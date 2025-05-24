@@ -13,11 +13,11 @@ export async function getProducts(filters: Record<string, any>) {
             return `skip=${(!isNaN(filters?.page) ? filters?.page : 0) * value}`
           }
           return `${key}=${value}`
-        }),
+        })
     ].join('&')
 
   const { data } = await apiClientService({
-    url: '/products/category/' + (filters.category ?? 'home-decoration') + filterQuery,
+    url: '/products/category/' + (filters.category ?? 'home-decoration') + filterQuery
   })
   return data as any
 }

@@ -3,22 +3,22 @@ export const GLOBAL_STYLES = {
   primaryColor: '#fe5000',
   primaryColorFaint: 'rgba(254, 80, 0, 0.4);',
   table: {
-    primaryColor: '#ebe2d4',
+    primaryColor: '#ebe2d4'
   },
   icons: {
-    height: '42px',
+    height: '42px'
   },
   typogrpahy: {
     weight: {
       heavy: 600,
-      light: 400,
+      light: 400
     },
     size: {
       mainTitle: '20px',
       title: '16px',
       normal: '14px',
-      paragraph: '12px',
-    },
+      paragraph: '12px'
+    }
   },
   colors: {
     grey: {
@@ -26,7 +26,7 @@ export const GLOBAL_STYLES = {
       4: '#404041',
       5: '#F6F6F6',
       6: '#929497',
-      7: '#333333',
-    },
-  },
+      7: '#333333'
+    }
+  }
 }

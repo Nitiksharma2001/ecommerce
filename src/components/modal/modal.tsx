@@ -1,6 +1,7 @@
 import { Flex, Modal, Typography } from 'antd'
-import tickAnimation from '../../assets/tick-animation.json'
 import Lottie from 'lottie-react'
+
+import tickAnimation from '../../assets/tick-animation.json'
 
 const { Title } = Typography
 

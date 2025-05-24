@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { Select } from 'antd'
+
 import { GLOBAL_STYLES } from '../../utils/global-styles'
 
 interface DropdownJSXProps {
@@ -16,7 +18,7 @@ const DropdownJSX: React.FC<DropdownJSXProps> = ({ options = [], placeholder, de
       style={{
         ...style,
         color: GLOBAL_STYLES['colors']['grey']['7'],
-        fontSize: GLOBAL_STYLES['typogrpahy']['size']['paragraph'],
+        fontSize: GLOBAL_STYLES['typogrpahy']['size']['paragraph']
       }}
       options={options}
       defaultValue={defaultValue}

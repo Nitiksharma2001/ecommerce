@@ -1,7 +1,9 @@
-import { GLOBAL_STYLES } from '../../../utils/global-styles'
 import React from 'react'
-import { IconType } from 'react-icons'
+
 import { Flex, Typography } from 'antd'
+import { IconType } from 'react-icons'
+
+import { GLOBAL_STYLES } from '../../../utils/global-styles'
 
 const { Text } = Typography
 
@@ -26,7 +28,7 @@ export default function IconJSX({ Icon, title, type = 'default', position = 'rel
     gap: '10px',
     position: position as React.CSSProperties['position'],
     left: position === 'absolute' ? 12 : undefined,
-    zIndex: position === 'absolute' ? 100 : undefined,
+    zIndex: position === 'absolute' ? 100 : undefined
   }
 
   if (type === 'clicked') {
@@ -35,7 +37,7 @@ export default function IconJSX({ Icon, title, type = 'default', position = 'rel
         style={{
           ...iconStyle,
           width: '50px',
-          backgroundColor: 'white',
+          backgroundColor: 'white'
         }}
       >
         <Icon color='red' size={iconSize} />
@@ -49,7 +51,7 @@ export default function IconJSX({ Icon, title, type = 'default', position = 'rel
         style={{
           ...iconStyle,
           backgroundColor: 'red',
-          paddingLeft: '16px',
+          paddingLeft: '16px'
         }}
       >
         <Icon color='white' size={iconSize} />
@@ -63,7 +65,7 @@ export default function IconJSX({ Icon, title, type = 'default', position = 'rel
       style={{
         ...iconStyle,
         width: '50px',
-        backgroundColor: 'inherit',
+        backgroundColor: 'inherit'
       }}
     >
       <Icon color='grey' size={iconSize} />
